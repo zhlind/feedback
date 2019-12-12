@@ -30,6 +30,12 @@ import 'vant/lib/col/style'
 // import 'vant/lib/toast/style'
 // import Toast from 'vant/lib/toast'
 // Vue.use(Toast);
+import 'vant/lib/overlay/style'
+import Overlay from 'vant/lib/overlay';
+import 'vant/lib/loading/style'
+import Loading from 'vant/lib/loading'
+Vue.use(Loading);
+Vue.use(Overlay);
 import "vant/lib/lazyload/style"
 import LazyLoad from  'vant/lib/lazyload'
 Vue.use(LazyLoad);

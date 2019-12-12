@@ -4,11 +4,11 @@ import Qs from 'qs'
 
 axios.defaults.timeout = 5000;
 //axios.defaults.baseURL = 'https://api.ganglonggou.com/api/v1';
-// axios.defaults.baseURL = 'http://192.168.0.37:8004/api/v1/cms';
+// axios.defaults.baseURL = 'http://192.168.0.37:8005/api/v1';
 // axios.defaults.baseURL = 'http://192.168.0.161:7501/api/v1/cms';
 // axios.defaults.baseURL='https://test-api-l.ganglonggou.com/api/v1/cms';
 // axios.defaults.baseURL='https://monitor-api.ganglonggou.com/api/v1/cms';
-axios.defaults.baseURL='https://test-api.ganglonggou.com/api/v1';
+// axios.defaults.baseURL='https://test-api.ganglonggou.com/api/v1';
 //http request 拦截器
 axios.interceptors.request.use(
     config => {
