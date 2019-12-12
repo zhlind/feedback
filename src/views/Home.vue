@@ -111,7 +111,7 @@
                 const fromData = new FormData();
                 let file2 = file.file;
                 fromData.append('portrait_img', file2, file2.name);
-                this.$imgUpload("https://test-api.ganglonggou.com/api/v1/user_upd_portrait", fromData).then((msg) => {
+                this.$imgUpload("user_upd_portrait", fromData).then((msg) => {
                     // this.addImg.url= msg.goods_img;
                     // this.imgFile.pop();
                     // this.imgFile.push(this.addImg)
@@ -157,7 +157,7 @@
                     {
                         imgUrl=imgUrl+this.imgFile[i].url+",";
                     }
-                    this.$post('http://192.168.0.37:8005/api/v1/add_feed_back',{
+                    this.$post('add_feed_back',{
                         feed_back_type:this.feedType,
                         problem_details:this.problemDetails,
                         contact:this.contact,

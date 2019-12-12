@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -21,11 +21,11 @@ const routes = [
       title:'关于商城'
     }
   }
-]
+];
 
 const router = new VueRouter({
   routes
-})
+});
 const defaultTitle = '岗隆';
 router.beforeEach((to,from,next)=>{
   document.title = to.meta.title ? to.meta.title : defaultTitle
