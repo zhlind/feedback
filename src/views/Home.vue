@@ -89,24 +89,23 @@
         },
         methods: {
             beforeRead(file) {
-                if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
-                    Toast('请上传 jpg 格式图片');
+                if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+                    Toast('请上传 jpg 、png、gif格式图片');
                     return false;
                 }
                 return true;
             },
-
             // 返回 Promise
-            asyncBeforeRead(file) {
-                return new Promise((resolve, reject) => {
-                    if (file.type !== 'image/jpeg') {
-                        Toast('请上传 jpg 格式图片');
-                        reject();
-                    } else {
-                        resolve();
-                    }
-                });
-            },
+            // asyncBeforeRead(file) {
+            //     return new Promise((resolve, reject) => {
+            //         if (file.type !== 'image/jpeg') {
+            //             Toast('请上传 jpg 格式图片');
+            //             reject();
+            //         } else {
+            //             resolve();
+            //         }
+            //     });
+            // },
             afterRead(file) {
                 const fromData = new FormData();
                 let file2 = file.file;
@@ -143,15 +142,6 @@
             submit() {
                 if (this.error1 === null && this.error2 === null) {
                     this.show = true;
-                    // let imgUrl= null;
-                    // let it=null;
-                    // for (let i=0;i<=this.imgFile.length;i++){
-                    //     it=this.imgFile[i].toString();
-                    //     console.log(it);
-                    //     imgUrl=imgUrl+this.imgFile[i];
-                    // }
-                    // let imgUrl=this.imgFile[0].url;
-                    // console.log(imgUrl);
                     let imgUrl='';
                     for (let i=0;i<this.imgFile.length;i++)
                     {
