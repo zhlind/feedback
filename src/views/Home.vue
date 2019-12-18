@@ -82,12 +82,24 @@
                 error1: "至少输入5个字符",
                 error2: "不能为空",
                 show: false,
+                version:"1.0.0",
+                platform:"wx",
+
             }
         },
         created() {
-
+            this.getString();
         },
         methods: {
+            getString(){
+              if (this.$route.query.version!=null){
+                  this.version=this.$route.query.version;
+              }
+              if (this.$route.query.platform!=null){
+                    this.platform=this.$route.query.platform;
+                }
+              console.log(this.platform)
+            },
             beforeRead(file) {
                 if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
                     Toast('请上传 jpg 、png、gif格式图片');
@@ -148,6 +160,8 @@
                         imgUrl=imgUrl+this.imgFile[i].url+",";
                     }
                     this.$post('add_feed_back',{
+                        v_num:this.version,
+                        platform:this.platform,
                         feed_back_type:this.feedType,
                         problem_details:this.problemDetails,
                         contact:this.contact,
